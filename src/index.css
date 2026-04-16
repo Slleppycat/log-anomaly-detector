@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Syne", sans-serif;
+
+  --color-accent: #e8440a;
+  --color-bg-dark: #0f1117;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-white font-sans antialiased overflow-hidden;
+    background: radial-gradient(circle at top left, rgba(232, 68, 10, 0.06), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.05), transparent 40%),
+                #0f1117;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/6 border border-white/9 backdrop-blur-xl rounded-2xl;
+  }
+
+  .glass-pill {
+    @apply bg-white/6 border border-white/15 rounded-full px-3 py-1 transition-all duration-200 hover:bg-white/10 hover:border-white/25;
+  }
+
+  .glass-button {
+    @apply bg-white/6 border border-white/15 rounded-full px-6 py-2 transition-all duration-200 hover:bg-white/10 hover:border-white/25 active:scale-95;
+  }
+
+  .accent-button {
+    @apply bg-accent border border-accent/50 rounded-full px-6 py-2 shadow-[0_4px_14px_rgba(232,68,10,0.35)] transition-all duration-200 hover:bg-accent/90 active:scale-95;
+  }
+
+  .input-glass {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-all;
+  }
+
+  .scrollbar-glass::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-glass::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-glass::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-white/20;
+  }
+}

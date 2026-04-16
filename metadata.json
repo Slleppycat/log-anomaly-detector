@@ -1,0 +1,6 @@
+{
+  "name": "Log Sentinel",
+  "description": "AI-powered security SIEM dashboard for anomaly detection and log analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
